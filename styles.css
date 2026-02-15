@@ -1,0 +1,528 @@
+:root {
+    --primary-color: #0F172A;
+    /* Deep Navy Background */
+    --accent-color: #10B981;
+    /* Success Green */
+    --text-color: #F8FAFC;
+    /* Off-white text */
+    --text-muted: #94A3B8;
+    --card-bg: #1E293B;
+    /* Slightly lighter navy for cards */
+    --white: #FFFFFF;
+    --gold: #F59E0B;
+    --danger: #EF4444;
+
+    --font-main: 'Inter', sans-serif;
+    --spacing-container: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: var(--spacing-container);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: #059669;
+    border-color: #059669;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--text-muted);
+}
+
+.btn-outline:hover {
+    border-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    padding: 120px 0;
+    text-align: center;
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.badge {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--accent-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Comparison Table */
+.comparison-section {
+    background-color: #172033;
+}
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #334155;
+}
+
+.comparison-table th {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.comparison-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: var(--white);
+    width: 25%;
+}
+
+.comparison-table .col-us {
+    color: var(--accent-color);
+    font-weight: 700;
+    background-color: rgba(16, 185, 129, 0.05);
+    border-radius: 8px 8px 0 0;
+}
+
+.comparison-table .highlight {
+    color: var(--accent-color);
+    font-weight: 700;
+    background-color: rgba(16, 185, 129, 0.05);
+}
+
+.comparison-cards {
+    display: none;
+}
+
+/* Service Matrix */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.icon-box {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Operational Health */
+.operational-health {
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    border-top: 1px solid #334155;
+    border-bottom: 1px solid #334155;
+}
+
+.health-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.health-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.health-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.health-item i {
+    font-size: 2.5rem;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.health-item h3 {
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.health-item p {
+    color: var(--text-muted);
+}
+
+/* Pricing */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.pricing-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid #334155;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.pricing-card.popular {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.card-header {
+    text-align: center;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.currency {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.summary {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.card-body ul {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.card-body li {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-body li strong {
+    margin-right: 5px;
+    color: var(--white);
+}
+
+.card-body li:before {
+    content: "✓";
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.card-body .btn {
+    width: 100%;
+    text-align: center;
+}
+
+.pricing-note {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    padding: 60px 0 20px;
+    border-top: 1px solid #334155;
+    background-color: #0B1120;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.footer-logo h2 {
+    font-size: 1.5rem;
+}
+
+.dot {
+    color: var(--accent-color);
+}
+
+.footer-link {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--accent-color);
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+/* Additions for What We Do Section and Matrix */
+
+.what-we-do {
+    background-color: #0F172A;
+    padding: 100px 0;
+}
+
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.text-col {
+    flex: 1;
+}
+
+.text-col h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.text-col .lead {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.feature-list {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.feature-list li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.feature-list i {
+    color: var(--accent-color);
+    margin-top: 5px;
+}
+
+.image-col {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-placeholder {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px dashed var(--text-muted);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+.img-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+/* Matrix Table Styling */
+.matrix-section {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.matrix-section h3 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.matrix-table th {
+    background-color: #0B1120;
+    color: var(--accent-color);
+}
+
+.matrix-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-row {
+        flex-direction: column;
+    }
+
+    .matrix-section {
+        display: none;
+        /* Hide detailed matrix on mobile if too complex, or keep scroll */
+    }
+
+    .comparison-table-wrapper {
+        overflow-x: scroll;
+    }
+
+    .matrix-section {
+        display: block;
+    }
+}
